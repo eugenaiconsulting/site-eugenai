@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire - EugenIA Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+        }
+        
+        /* Demi-cercles bordeaux sur les côtés */
+        .bordeaux-semicircle {
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            background-color: #671324;
+            border-radius: 50%;
+            z-index: 10;
+            opacity: 1;
+            transition: background-color 0.5s ease;
+        }
+        
+        .semicircle-right {
+            top: 30%;
+            right: -125px;
+            transform: translateY(-50%);
+        }
+        
+        .semicircle-left {
+            top: 70%;
+            left: -125px;
+            transform: translateY(-50%);
+        }
+        
+        /* Demi-cercles blancs quand la section CTA est visible */
+        .bordeaux-semicircle.white-mode {
+            background-color: #ffffff !important;
+        }
+        .mission-bg {
+            background: linear-gradient(135deg, #8b0000 0%, #daa520 50%, #8b0000 100%) !important;
+        }
+        
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(103, 19, 36, 0.9) 0%, rgba(219, 161, 45, 0.8) 100%);
+        }
+        
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #671324;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #671324;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 2rem);
+            background: linear-gradient(to bottom, #671324, #DBA12D);
+        }
+        
+        .timeline-item:last-child::after {
+            height: calc(100% - 0.5rem);
+        }
+        
+        /* Values cards */
+        .value-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            border-color: #671324;
+            box-shadow: 0 20px 40px rgba(103, 19, 36, 0.15);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Demi-cercles bordeaux sur les côtés -->
+    <div class="bordeaux-semicircle semicircle-right"></div>
+    <div class="bordeaux-semicircle semicircle-left"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none border-b border-transparent" style="height: 100px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-center items-center h-full">
+                <!-- Logo rouge centré et agrandi -->
+                <a href="index.html" class="flex items-center h-full">
+                    <img src="assets/logo rouge eugenia seul.png" alt="EugenIA Consulting" class="h-44 w-auto" style="margin-top: 70px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu hamburger -->
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <!-- Header du menu -->
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <!-- Navigation principale -->
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                    <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                        <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                        <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                </div>
+            </nav>
+            
+            <!-- Footer du menu -->
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="relative py-48 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/P1120105.JPG" alt="EugenIA Consulting" class="w-full h-full object-cover" style="object-position: center 20%;">
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center pt-32">
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold font-playfair mb-12" style="color: #671324 !important;">
+                Notre Histoire
+            </h1>
+            <p class="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                Découvrez le parcours qui nous a menés à devenir les experts de l'automatisation et des agents IA
+            </p>
+        </div>
+    </section>
+
+    <!-- Notre Mission Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-playfair mb-6">
+                    Notre Mission
+                </h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Accompagner les entreprises dans leur transformation digitale avec des solutions concrètes, innovantes et durables
+                </p>
+            </div>
+
+            <!-- Mission Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="relative">
+                    <!-- Carte de fond -->
+                    <div class="absolute inset-0 rounded-xl transform rotate-1 translate-x-1 translate-y-1" style="background-color: #E33054;"></div>
+                    <!-- Carte principale -->
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-300">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 font-playfair">Accompagnement</h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-light text-center">
+                            Nous vous accompagnons dans l'optimisation de vos processus métier, avec formation et support personnalisé adaptés à vos besoins.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative">
+                    <!-- Carte de fond -->
+                    <div class="absolute inset-0 rounded-xl transform -rotate-1 -translate-x-1 translate-y-1" style="background-color: #DBA12D;"></div>
+                    <!-- Carte principale -->
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-yellow-300">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 font-playfair">Résultats Concrets</h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-light text-center">
+                            Nos solutions optimisent vos opérations pour libérer vos équipes et les concentrer sur les missions stratégiques.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative md:col-span-2 lg:col-span-1">
+                    <!-- Carte de fond -->
+                    <div class="absolute inset-0 rounded-xl transform rotate-1 translate-x-1 -translate-y-1" style="background-color: #E33054;"></div>
+                    <!-- Carte principale -->
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-300">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 font-playfair">Excellence</h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-light text-center">
+                            Nous nous engageons à fournir des solutions robustes et fiables pour pérenniser votre croissance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <a href="nos-formules.html" class="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg" style="background-color: #671324;" onmouseover="this.style.backgroundColor='#DBA12D'" onmouseout="this.style.backgroundColor='#671324'">
+                    <span class="mr-3">Découvrir nos solutions</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-playfair mb-6">
+                    Notre Parcours
+                </h2>
+                <p class="text-xl text-gray-600 font-light">
+                    Les étapes clés qui ont façonné EugenIA Consulting
+                </p>
+            </div>
+            
+            <div class="space-y-12">
+                <div class="timeline-item">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl font-bold text-black mr-4 font-playfair">2025</span>
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair">Les Premiers Pas</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-light">
+                            Création d'EugenIA Consulting avec une vision claire : démocratiser l'intelligence artificielle pour les entreprises de toutes tailles.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #671324;">IA</span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #DBA12D;">Automatisation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl font-bold text-black mr-4 font-playfair">2025</span>
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair">Première Expertise Make</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-light">
+                            Spécialisation dans l'automatisation avec Make (ex-Integromat). Premiers clients satisfaits et processus métier automatisés.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #DBA12D;">Make</span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #671324;">Intégrations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl font-bold text-black mr-4 font-playfair">2025</span>
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair">Révolution Dust</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-light">
+                            Intégration des agents IA Dust dans nos solutions. Création d'assistants virtuels intelligents pour nos clients.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #671324;">Dust</span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #DBA12D;">Agents IA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl font-bold text-black mr-4 font-playfair">2025</span>
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair">L'Excellence Continue</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-light">
+                            Lancement de nos formules d'automatisation complètes. Premiers projets réalisés avec un taux de satisfaction élevé.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #DBA12D;">Formules</span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium text-white" style="background-color: #671324;">Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Valeurs Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-playfair mb-6">
+                    Nos Valeurs
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Les principes qui guident notre approche et notre relation avec nos clients
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform rotate-1 translate-x-1 translate-y-1" style="background-color: #E33054;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-300 overflow-hidden">
+                        <!-- Image de fond -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="assets/IMG_3979.jpg" alt="Background" class="w-full h-full object-cover opacity-70">
+                        </div>
+                        <!-- Overlay pour améliorer la lisibilité -->
+                        <div class="absolute inset-0 bg-white/30 z-10"></div>
+                        <!-- Contenu -->
+                        <div class="relative z-20">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Collaboration</h3>
+                            <p class="text-gray-900 text-center font-bold leading-relaxed">
+                                Nous travaillons main dans la main avec nos clients pour comprendre leurs défis et créer des solutions personnalisées qui répondent parfaitement à leurs besoins.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform -rotate-1 -translate-x-1 translate-y-1" style="background-color: #DBA12D;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-yellow-300">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Transparence</h3>
+                        <p class="text-gray-700 text-center font-light">
+                            Communication claire et processus transparents. Nos clients sont informés à chaque étape et savent exactement où en est leur projet.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform rotate-1 translate-x-1 -translate-y-1" style="background-color: #E33054;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-300 overflow-hidden">
+                        <!-- Image de fond -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="assets/PXL_20250602_073144343.PORTRAIT.ORIGINAL.jpg" alt="Background" class="w-full h-full object-cover opacity-70">
+                        </div>
+                        <!-- Overlay pour améliorer la lisibilité -->
+                        <div class="absolute inset-0 bg-white/30 z-10"></div>
+                        <!-- Contenu -->
+                        <div class="relative z-20">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Innovation</h3>
+                            <p class="text-gray-900 text-center font-bold leading-relaxed">
+                                Nous explorons les dernières technologies et méthodes pour vous proposer des solutions modernes et efficaces qui font la différence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform -rotate-1 -translate-x-1 -translate-y-1" style="background-color: #DBA12D;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-yellow-300">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Excellence</h3>
+                        <p class="text-gray-700 text-center font-light">
+                            Chaque projet est mené avec le plus grand soin et une attention particulière aux détails pour garantir des résultats de qualité supérieure.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform rotate-1 translate-x-1 translate-y-1" style="background-color: #E33054;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-300 overflow-hidden">
+                        <!-- Image de fond -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="assets/PXL_20250603_092828316.jpg" alt="Background" class="w-full h-full object-cover opacity-70">
+                        </div>
+                        <!-- Overlay pour améliorer la lisibilité -->
+                        <div class="absolute inset-0 bg-white/30 z-10"></div>
+                        <!-- Contenu -->
+                        <div class="relative z-20">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Performance</h3>
+                            <p class="text-gray-900 text-center font-bold leading-relaxed">
+                                Nos solutions sont conçues pour optimiser vos processus et générer des résultats concrets et mesurables dans les meilleurs délais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-xl transform -rotate-1 -translate-x-1 translate-y-1" style="background-color: #DBA12D;"></div>
+                    <div class="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-yellow-300">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center font-playfair">Adaptabilité</h3>
+                        <p class="text-gray-700 text-center font-light">
+                            Nous nous adaptons aux spécificités de votre entreprise pour créer des solutions parfaitement alignées avec votre culture et vos objectifs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #E33054;">
+        <div class="max-w-4xl mx-auto activate-center">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white font-playfair mb-6">
+                    Prêt à Écrire Votre Histoire ?
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Rejoignez les entreprises qui ont choisi EugenIA Consulting pour leur transformation digitale
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="nos-formules.html" class="bg-white text-red-600 border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white font-bold py-4 px-8 rounded-full transition-colors duration-300">
+                        Découvrir Nos Formules
+                    </a>
+                <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-red-600 font-bold py-4 px-8 rounded-full transition-colors duration-300">
+                    Nous Contacter
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-16 px-4 sm:px-6 lg:px-8" style="background-color: #E33054;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 ml-8">
+                <div>
+                    <img src="assets/1709c118-461c-4d3c-b2db-475e6a8c9484.png" alt="EugenIA Consulting" class="h-12 w-auto mb-4">
+                    <p class="text-white/80">
+                        Experts en automatisation et agents IA pour transformer votre entreprise.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="service-automatisation.html" class="text-white/80 hover:text-white transition-colors">Automatisation & Agents IA</a></li>
+                        <li><a href="nos-formules.html" class="text-white/80 hover:text-white transition-colors">Nos Formules</a></li>
+                        <li><a href="service-formation.html" class="text-white/80 hover:text-white transition-colors">Formation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">À Propos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="notre-histoire.html" class="text-white/80 hover:text-white transition-colors">Notre Histoire</a></li>
+                        <li><a href="valeurs-et-vision.html" class="text-white/80 hover:text-white transition-colors">Valeurs & Vision</a></li>
+                        <li><a href="equipe.html" class="text-white/80 hover:text-white transition-colors">Équipe</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Nous Contacter</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    © 2024 EugenIA Consulting. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Le menu est géré par script.js - pas besoin de script inline supplémentaire
+        
+        // Observer pour changer la couleur des demi-cercles quand la section CTA est visible
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const semicircles = document.querySelectorAll('.bordeaux-semicircle');
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
+                        semicircles.forEach(circle => circle.classList.add('white-mode'));
+                    } else {
+                        semicircles.forEach(circle => circle.classList.remove('white-mode'));
+                    }
+                });
+            }, {
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+            });
+            
+            const ctaSection = document.querySelector('.cta-section');
+            if (ctaSection) {
+                observer.observe(ctaSection);
+            }
+        });
+    </script>
+</body>
+</html>

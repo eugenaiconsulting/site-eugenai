@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formation & Innovation - Eugenia</title>
+  <meta name="description" content="Formations et conseils en innovation technologique">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=9999999999">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Appliquer la police Playfair à tous les titres */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif !important;
+    }
+    .header {
+      background: #000;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 0.06em;
+    }
+    .header p {
+      font-size: 20px;
+      margin: 20px 0 0 0;
+      opacity: 0.8;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    .section {
+      margin-bottom: 60px;
+    }
+    .section h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #111;
+    }
+    .section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 40px;
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-btn" aria-label="Ouvrir le menu">
+    <span class="menu-icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+    </span>
+    <span class="label">Menu</span>
+  </button>
+  
+  <div class="backdrop" aria-hidden="true"></div>
+  
+  <aside class="side-panel" aria-hidden="true">
+    <div class="panel-content">
+      <!-- Header du menu -->
+      <div class="menu-header">
+        <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+      </div>
+      
+      <!-- Navigation principale -->
+      <nav class="main-nav">
+        <div class="nav-category">
+          <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+          <div class="submenu" id="services-submenu">
+            <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+            <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+          </div>
+        </div>
+        
+        <div class="nav-category">
+          <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+          <div class="submenu" id="about-submenu">
+            <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+            <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+            <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+          </div>
+        </div>
+        
+        <div class="nav-category">
+          <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+        </div>
+      </nav>
+      
+      <!-- Footer du menu -->
+      <div class="menu-footer">
+        <a href="contact.html" class="footer-link">CONTACT</a>
+        <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+        <a href="nos-formules.html" class="footer-link">FORMULES</a>
+        <a href="contact.html" class="footer-link">SUPPORT</a>
+      </div>
+    </div>
+  </aside>
+  
+  <div class="header">
+    <h1>Formation & Innovation</h1>
+    <p>Développez les compétences de demain</p>
+  </div>
+  
+  <div class="container">
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    
+    <div class="section">
+      <h2>Notre Mission</h2>
+      <p>L'innovation technologique évolue rapidement. Nous formons vos équipes aux dernières technologies et méthodologies pour maintenir votre avantage concurrentiel dans un monde en constante transformation.</p>
+    </div>
+    
+    <div class="section">
+      <h2>Formations</h2>
+      <p>• Intelligence Artificielle et Machine Learning</p>
+      <p>• Développement No-Code et Low-Code</p>
+      <p>• Gestion de données et analytics</p>
+      <p>• Transformation digitale</p>
+      <p>• Méthodologies agiles et innovation</p>
+    </div>
+    
+    <div class="section">
+      <h2>Formats</h2>
+      <p>Nos formations s'adaptent à vos besoins : sessions en présentiel, formations en ligne, workshops pratiques, et accompagnement personnalisé pour vos projets d'innovation.</p>
+    </div>
+    
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Prêt à former vos équipes aux technologies de demain ? Découvrez notre catalogue de formations sur mesure.</p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation & Accompagnement - Eugenia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+            min-height: 100vh;
+            color: #333333;
+        }
+        
+        /* Appliquer la police Playfair à tous les titres */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+
+        .header {
+            background: rgba(245, 230, 211, 0.95);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+            color: #555555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .services-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .content-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <!-- Header du menu -->
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <!-- Navigation principale -->
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                    <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                        <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                        <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                </div>
+            </nav>
+            
+            <!-- Footer du menu -->
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+    
+    <a href="index.html" class="back-link">← Retour</a>
+
+    <div class="header">
+        <h1>Formation & Accompagnement</h1>
+        <p>Formez vos équipes aux nouvelles technologies</p>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Notre Approche</h2>
+            <p>La transformation digitale nécessite un accompagnement personnalisé. Nous guidons vos équipes dans l'adoption des nouvelles technologies et les formons aux outils de demain.</p>
+            <p>Notre méthodologie combine expertise technique, pédagogie adaptée et accompagnement humain pour une transformation réussie.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Nos Services</h2>
+            <ul class="services-list">
+                <li>Formation aux outils d'IA et d'automatisation</li>
+                <li>Accompagnement au changement organisationnel</li>
+                <li>Coaching sur les outils data et analytics</li>
+                <li>Formation no-code et low-code</li>
+                <li>Ateliers pratiques et cas d'usage</li>
+                <li>Support continu post-formation</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Méthodologie</h2>
+            <p>Nos formations sont conçues sur mesure pour répondre aux besoins spécifiques de votre entreprise. Nous privilégions une approche pratique avec des cas d'usage concrets.</p>
+            <p>Chaque session combine théorie, démonstrations pratiques, et exercices pour garantir une adoption réussie des outils.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Résultats</h2>
+            <ul class="services-list">
+                <li>Adoption réussie par les équipes à 95%</li>
+                <li>Gain de productivité de 40% après formation</li>
+                <li>Réduction de 80% des erreurs d'utilisation</li>
+                <li>Autonomie des équipes en 3 mois</li>
+            </ul>
+        </div>
+
+        <!-- Section Contact -->
+        <section class="contact-section" id="contact-section">
+            <div class="contact-wrapper">
+                <!-- Logo et informations -->
+                <div class="contact-left">
+                    <div class="contact-logo-container">
+                        <img src="assets/logo eugenia blanc sans fond.png" alt="Eugenia Logo" class="contact-logo">
+                    </div>
+                    <h2 class="contact-title">Parlons de votre projet</h2>
+                    <p class="contact-description">Transformez vos ambitions en réalité. Notre équipe d'experts est prête à vous accompagner dans votre transformation digitale.</p>
+                    
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <span class="info-label">Email</span>
+                            <a href="mailto:eugenai.services@gmail.com" class="info-value" onclick="copyEmail(event, 'eugenai.services@gmail.com')">eugenai.services@gmail.com</a>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <span class="info-label">Téléphone</span>
+                            <a href="tel:+33745270910" class="info-value">07 45 27 09 10</a>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <span class="info-label">Adresse</span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=18+Rue+du+Paradis+75010+Paris+France" target="_blank" class="info-value">18 Rue du Paradis<br>75010 Paris, France</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulaire -->
+                <div class="contact-right">
+                    <form class="contact-form-pro" action="https://formspree.io/f/xblzzrdr" method="POST">
+                        <div class="form-row">
+                            <div class="form-group-pro">
+                                <label for="name-contact-formation">Nom complet</label>
+                                <input type="text" id="name-contact-formation" name="name" required>
+                            </div>
+                            <div class="form-group-pro">
+                                <label for="company-contact-formation">Entreprise</label>
+                                <input type="text" id="company-contact-formation" name="company">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group-pro">
+                                <label for="email-contact-formation">Email professionnel</label>
+                                <input type="email" id="email-contact-formation" name="email" required>
+                            </div>
+                            <div class="form-group-pro">
+                                <label for="phone-contact-formation">Téléphone</label>
+                                <input type="tel" id="phone-contact-formation" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-pro full-width">
+                            <label for="subject-contact-formation">Sujet de votre demande</label>
+                            <input type="text" id="subject-contact-formation" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group-pro full-width">
+                            <label for="message-contact-formation">Décrivez votre projet</label>
+                            <textarea id="message-contact-formation" name="message" rows="3" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="contact-btn-pro">Envoyer la demande</button>
+                        
+                        <!-- Message de statut -->
+                        <div id="form-status-contact-formation" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+    
+    <!-- Script pour gérer le formulaire de contact -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form-pro');
+            const statusDiv = document.getElementById('form-status-contact-formation');
+            
+            if (!form || !statusDiv) {
+                return;
+            }
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('.contact-btn-pro');
+                const originalText = submitBtn.textContent;
+                
+                // Désactiver le bouton et afficher un message de chargement
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Envoi en cours...';
+                statusDiv.style.display = 'none';
+                
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch('https://formspree.io/f/xblzzrdr', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.backgroundColor = '#d4edda';
+                        statusDiv.style.color = '#155724';
+                        statusDiv.style.border = '1px solid #c3e6cb';
+                        statusDiv.textContent = '✓ Votre message a été envoyé avec succès ! Nous vous recontacterons bientôt.';
+                        
+                        form.reset();
+                    } else {
+                        const data = await response.json();
+                        throw new Error(data.error || 'Erreur lors de l\'envoi');
+                    }
+                } catch (error) {
+                    statusDiv.style.display = 'block';
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                    statusDiv.style.color = '#721c24';
+                    statusDiv.style.border = '1px solid #f5c6cb';
+                    statusDiv.textContent = '✗ Une erreur est survenue. Veuillez réessayer ou nous contacter directement.';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+            
+            // Fonction pour copier l'email
+            window.copyEmail = function(event, email) {
+                event.preventDefault();
+                navigator.clipboard.writeText(email).then(function() {
+                    const link = event.target;
+                    const originalText = link.textContent;
+                    link.textContent = '✓ Copié !';
+                    setTimeout(function() {
+                        link.textContent = originalText;
+                    }, 2000);
+                });
+            };
+        });
+    </script>
+</body>
+</html>

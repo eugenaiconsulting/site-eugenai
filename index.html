@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eugenia</title>
+  <meta name="description" content="Landing page blanche">
+  
+      <!-- Performance optimizations -->
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="dns-prefetch" href="https://formspree.io">
+      
+      <!-- Fonts optimisées - seulement les poids nécessaires -->
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css?v=9999999999" media="all">
+    
+    <style>
+        /* Identité numérique cohérente */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Supprimer complètement la bannière blanche en haut */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+        }
+        
+        /* Rendre le background transparent pour la zone du hero */
+        body.gradient-bg {
+            background: transparent;
+        }
+        
+        /* Appliquer le gradient seulement après le hero */
+        body.gradient-bg::after {
+            content: '';
+            position: fixed;
+            top: 100vh;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 100vh);
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Assurer que le hero commence en haut sans espace blanc */
+        .hero {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            position: relative;
+            top: 0 !important;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        
+        /* S'assurer que la vidéo couvre tout le haut */
+        .hero .video-bg {
+            top: 0 !important;
+            margin-top: 0 !important;
+            background: #000000;
+        }
+        
+        /* Fond noir pour la zone hero pendant le chargement de la vidéo */
+        .hero {
+            background: #000000;
+        }
+        
+        /* Masquer le body::before qui pourrait créer une couche blanche */
+        body::before {
+            z-index: -2;
+        }
+        
+        /* Appliquer la police Playfair à tous les titres */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+  <section class="hero">
+    <!-- Logo principal centré sur l'arbre -->
+    <div class="logo-tree-center">
+      <img src="assets/logo tout seul.png" alt="Logo EAI" loading="eager" decoding="async" fetchpriority="high" onerror="this.setAttribute('data-failed', 'true'); this.style.background='linear-gradient(135deg, #671324 0%, #8B1F3A 100%)';">
+    </div>
+    
+    <!-- Texte Eugenia Consulting en bas de l'arbre -->
+    <div class="eugenia-text-bottom">
+      <img src="assets/eugenia consulting.png" alt="Eugenia Consulting" loading="eager" decoding="async" onerror="this.setAttribute('data-failed', 'true'); this.style.background='linear-gradient(135deg, #671324 0%, #8B1F3A 100%)';">
+    </div>
+    
+    <video class="video-bg" autoplay muted playsinline preload="metadata" loop>
+      <source src="assets/18069166-uhd_3840_2160_24fps.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="logo-title">Consulting</div>
+  </section>
+  
+        <!-- Section Services Premium - Animation de scroll -->
+        <section id="services" class="services-scroll-section">
+          <div class="services-header">
+            <h2 class="services-title">Nos Services</h2>
+            <p class="services-subtitle">Des solutions d'exception pour transformer votre entreprise</p>
+          </div>
+          
+          <div class="services-content">
+            <!-- Service 1: Automatisation & Agents IA -->
+          <div class="service-scroll-item" data-service="1">
+            <div class="service-card-container">
+              <div class="service-card">
+                <video class="service-video" autoplay muted playsinline loop preload="none" loading="lazy">
+                  <source src="assets/Automatisation ia.mp4" type="video/mp4">
+                </video>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                  <div class="service-tag">Gagnez du temps</div>
+                </div>
+              </div>
+            </div>
+            <div class="service-text">
+              <h3 class="service-text-title">Automatisation & Agents IA</h3>
+              <p class="service-text-description">Optimisez vos processus métier avec des solutions d'automatisation intelligentes. Simplifiez les tâches répétitives, déployez des outils d'assistance et libérez votre équipe pour des missions stratégiques.</p>
+              <button class="service-btn" onclick="window.location.href='service-automatisation.html'">Découvrir</button>
+            </div>
+          </div>
+
+          <!-- Service 2: Nos Formules -->
+          <div class="service-scroll-item" data-service="2">
+            <div class="service-card-container">
+              <div class="service-card">
+                <video class="service-video" autoplay muted playsinline loop preload="none" loading="lazy">
+                  <source src="assets/formation et accompagnement.mp4" type="video/mp4">
+                </video>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                  <div class="service-tag">Transmettez autrement</div>
+                </div>
+              </div>
+            </div>
+            <div class="service-text">
+              <h3 class="service-text-title formation-title">Nos Formules</h3>
+              <p class="service-text-description">Découvrez nos formules d'accompagnement et d'optimisation sur-mesure. Des solutions simples aux projets complexes, trouvez la formule qui correspond à vos besoins et votre budget.</p>
+              <button class="service-btn" onclick="window.location.href='nos-formules.html'">Découvrir</button>
+            </div>
+          </div>
+          </div>
+        </section>
+  
+  <!-- Section Galerie Interactive -->
+  <section class="gallery-section">
+    <h2 class="gallery-title">Qui sommes-nous ?</h2>
+    
+    <div class="gallery-container">
+      <!-- Bouton précédent -->
+      <button id="prevBtn" class="nav-btn nav-btn-prev" aria-label="Image précédente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Bouton suivant -->
+      <button id="nextBtn" class="nav-btn nav-btn-next" aria-label="Image suivante">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Container des images -->
+      <div class="gallery-images" id="galleryImages">
+        <!-- Image 1: B2 -->
+        <div class="gallery-item active" data-index="0">
+          <img src="assets/B2.png" alt="B2" loading="eager" decoding="async" fetchpriority="high" width="800" height="600">
+          <div class="gallery-text">
+            <p>Chez Eugenia Consulting, nous accompagnons les entreprises dans leur transformation digitale avec des solutions concrètes et durables. Notre mission : optimiser vos processus et concrétiser vos projets les plus ambitieux.</p>
+          </div>
+        </div>
+
+        <!-- Image 2: Amphi -->
+        <div class="gallery-item" data-index="1">
+          <img src="assets/amphi.png" alt="Amphithéâtre" loading="lazy" decoding="async" width="800" height="600">
+          <div class="gallery-text">
+            <p>Nous croyons en une nouvelle génération de consulting où créativité et technologie s'unissent. Grâce à l'innovation, l'analyse de données et l'automatisation intelligente, nous ouvrons la voie aux entreprises de demain.</p>
+          </div>
+        </div>
+
+        <!-- Image 3: Amphi Pitch -->
+        <div class="gallery-item" data-index="2">
+          <img src="assets/amphi pitch.jpeg" alt="Amphithéâtre Pitch" loading="lazy" decoding="async" width="800" height="600">
+          <div class="gallery-text">
+            <p>Née d'un projet étudiant, Eugenia Consulting transforme l'énergie créative des jeunes talents en solutions concrètes. Notre équipe allie audace et expertise pour créer un impact réel.</p>
+          </div>
+        </div>
+
+        <!-- Image 4: Make Mistral Malt -->
+        <div class="gallery-item" data-index="3">
+          <img src="assets/image make mistral malt.jpeg" alt="Make Mistral Malt" loading="lazy" decoding="async" width="800" height="600">
+          <div class="gallery-text">
+            <p>Nous ne sommes pas un cabinet classique. Eugenia Consulting, c'est une équipe agile qui crée des solutions intelligentes, basées sur les données et optimisées pour faire avancer vos projets.</p>
+          </div>
+        </div>
+
+        <!-- Image 5: Photo classe -->
+        <div class="gallery-item" data-index="4">
+          <img src="assets/PXL_20250602_073144343.PORTRAIT.ORIGINAL.jpg" alt="Photo de classe" loading="lazy" decoding="async" width="800" height="600">
+          <div class="gallery-text">
+            <p>Notre objectif est clair : vous faire gagner du temps, réduire vos coûts et booster vos performances. Avec Eugenia Consulting, vos idées se transforment en résultats mesurables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section class="contact-section">
+    <div class="contact-wrapper">
+      <!-- Logo et informations -->
+      <div class="contact-left">
+        <div class="contact-logo-container">
+                    <img src="assets/logo eugenia blanc sans fond.png" alt="Eugenia Logo" class="contact-logo" loading="lazy" decoding="async" width="200" height="60">
+        </div>
+        <h2 class="contact-title">Parlons de votre projet</h2>
+        <p class="contact-description">Transformez vos ambitions en réalité. Notre équipe d'experts est prête à vous accompagner dans votre transformation digitale.</p>
+        
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <span class="info-label">Email</span>
+            <a href="mailto:eugenai.services@gmail.com" class="info-value" onclick="copyEmail(event, 'eugenai.services@gmail.com')">eugenai.services@gmail.com</a>
+          </div>
+          
+          <div class="contact-info-item">
+            <span class="info-label">Téléphone</span>
+            <a href="tel:+33745270910" class="info-value">07 45 27 09 10</a>
+          </div>
+          
+          <div class="contact-info-item">
+            <span class="info-label">Adresse</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=18+Rue+du+Paradis+75010+Paris+France" target="_blank" class="info-value">18 Rue du Paradis<br>75010 Paris, France</a>
+          </div>
+        </div>
+      </div>
+      <!-- Formulaire -->
+      <div class="contact-right">
+        <form class="contact-form-pro" action="https://formspree.io/f/xblzzrdr" method="POST">
+          <div class="form-row">
+            <div class="form-group-pro">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group-pro">
+              <label for="company">Entreprise</label>
+              <input type="text" id="company" name="company">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group-pro">
+              <label for="email">Email professionnel</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group-pro">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+          
+          <div class="form-group-pro full-width">
+            <label for="subject">Sujet de votre demande</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group-pro full-width">
+            <label for="message">Décrivez votre projet</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+          
+          <button type="submit" class="contact-btn-pro">Envoyer la demande</button>
+          
+          <!-- Message de statut -->
+          <div id="form-status" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <button class="menu-btn" aria-label="Ouvrir le menu">
+    <span class="menu-icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+    </span>
+    <span class="label">Menu</span>
+  </button>
+  
+  <div class="backdrop" aria-hidden="true"></div>
+  
+  <aside class="side-panel" aria-hidden="true">
+    <div class="panel-content">
+      <!-- Header du menu -->
+      <div class="menu-header">
+        <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+      </div>
+      
+      <!-- Navigation principale -->
+      <nav class="main-nav">
+        <div class="nav-category">
+          <a href="#services" class="nav-item main-category" data-category="services">SERVICES</a>
+          <div class="submenu" id="services-submenu">
+            <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+            <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+          </div>
+        </div>
+        
+        <div class="nav-category">
+          <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+          <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+            <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+            <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+          </div>
+        </div>
+        
+        <div class="nav-category">
+          <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+        </div>
+      </nav>
+      
+      <!-- Footer du menu -->
+      <div class="menu-footer">
+        <a href="contact.html" class="footer-link">CONTACT</a>
+        <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+        <a href="nos-formules.html" class="footer-link">FORMULES</a>
+        <a href="contact.html" class="footer-link">SUPPORT</a>
+      </div>
+    </div>
+  </aside>
+  
+  
+  <script src="script.js" defer></script>
+  
+  <!-- Script optimisé pour les animations 3D -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceItems = document.querySelectorAll('.service-scroll-item');
+      const cardContainers = document.querySelectorAll('.service-card-container');
+      
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const item = entry.target;
+          
+          if (entry.isIntersecting) {
+            // Animation d'entrée 3D simplifiée
+            item.classList.add('entering');
+            
+            setTimeout(() => {
+              item.classList.remove('entering');
+              item.classList.add('entered');
+            }, 50);
+            
+          } else {
+            // Réinitialiser quand l'élément sort de vue
+            item.classList.remove('entered');
+          }
+        });
+      }, observerOptions);
+
+      // Observer tous les éléments de service
+      serviceItems.forEach((item) => {
+        observer.observe(item);
+      });
+      
+    });
+  </script>
+  
+  <!-- Script pour copier l'email -->
+  <script>
+    function copyEmail(event, email) {
+      // Créer un élément temporaire pour copier
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999);
+      
+      try {
+        // Copier dans le presse-papier
+        document.execCommand('copy');
+        
+        // Afficher une notification
+        const notification = document.createElement('div');
+        notification.textContent = '✓ Email copié : ' + email;
+        notification.style.cssText = `
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background: #671324;
+          color: white;
+          padding: 15px 25px;
+          border-radius: 8px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+          z-index: 99999;
+          animation: slideIn 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Supprimer la notification après 3 secondes
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          setTimeout(() => {
+            if (notification.parentNode) {
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+        
+      } catch (err) {
+        console.error('Erreur:', err);
+      }
+      
+      document.body.removeChild(tempInput);
+    }
+  </script>
+
+  <!-- Script pour gérer le formulaire Formspree -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.contact-form-pro');
+      const statusDiv = document.getElementById('form-status');
+      const submitBtn = form.querySelector('.contact-btn-pro');
+      
+      if (!form || !statusDiv || !submitBtn) {
+        console.error('Éléments du formulaire manquants');
+        return;
+      }
+      
+        form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Désactiver le bouton pendant l'envoi
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
+        submitBtn.style.opacity = '0.7';
+        
+        // Récupérer les données du formulaire
+        const formData = new FormData(form);
+        
+        try {
+          const response = await fetch('https://formspree.io/f/xblzzrdr', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            // Succès
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = 'linear-gradient(135deg, #671324 0%, #DBA12D 100%)';
+            statusDiv.style.color = '#ffffff';
+            statusDiv.innerHTML = '✓ Message envoyé avec succès ! Nous vous répondrons très bientôt.';
+            
+            // Réinitialiser le formulaire
+            form.reset();
+            
+            // Cacher le message après 5 secondes
+            setTimeout(() => {
+              statusDiv.style.opacity = '0';
+              setTimeout(() => {
+                statusDiv.style.display = 'none';
+                statusDiv.style.opacity = '1';
+              }, 300);
+            }, 5000);
+            
+          } else {
+            // Erreur serveur
+            console.error('❌ Erreur serveur:', response.status);
+            const data = await response.json().catch(() => ({}));
+            console.error('Détails:', data);
+            
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#ff4444';
+            statusDiv.style.color = '#ffffff';
+            statusDiv.innerHTML = '✗ Une erreur est survenue. Veuillez réessayer.';
+            
+            if (data.errors) {
+              statusDiv.innerHTML += '<br><small>' + data.errors.map(error => error.message).join(', ') + '</small>';
+            }
+          }
+        } catch (error) {
+          // Erreur réseau
+          console.error('❌ Erreur réseau:', error);
+          statusDiv.style.display = 'block';
+          statusDiv.style.background = '#ff4444';
+          statusDiv.style.color = '#ffffff';
+          statusDiv.innerHTML = '✗ Erreur de connexion. Vérifiez votre connexion internet.';
+        } finally {
+          // Réactiver le bouton
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer la demande';
+          submitBtn.style.opacity = '1';
+        }
+      });
+    });
+  </script>
+  
+  <style>
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Décalage du titre Nos Formules vers la gauche */
+    .formation-title {
+      margin-left: -60px !important;
+      padding-left: 60px !important;
+      transform: translateX(-20px) !important;
+    }
+    
+    @media (max-width: 768px) {
+      .formation-title {
+        margin-left: -30px !important;
+        padding-left: 30px !important;
+        transform: translateX(-10px) !important;
+      }
+    }
+    
+    /* Décalage spécifique du mot "Accompagnement" vers la gauche */
+    .accompagnement-word {
+      margin-left: -80px !important;
+      padding-left: 80px !important;
+      transform: translateX(-50px) !important;
+      position: relative !important;
+      left: -40px !important;
+    }
+    
+    @media (max-width: 768px) {
+      .accompagnement-word {
+        margin-left: -50px !important;
+        padding-left: 50px !important;
+        transform: translateX(-25px) !important;
+        left: -20px !important;
+      }
+    }
+  </style>
+
+  <!-- Popup notification après 10 secondes -->
+  <div id="contact-popup" class="contact-popup" style="display: none;">
+    <div class="popup-overlay"></div>
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="popup-header">
+        <img src="assets/logo sans fond long eugenia.png" alt="Eugenia" class="popup-logo" loading="lazy" decoding="async" width="300" height="80">
+        <div class="popup-badge">Contact Express</div>
+        <h3 class="popup-title">Parlons de votre projet</h3>
+        <p class="popup-subtitle">Nos experts vous recontactent sous 24h pour échanger sur vos besoins</p>
+      </div>
+      
+      <form class="popup-form" action="https://formspree.io/f/xanplodl" method="POST">
+        <div class="popup-form-grid">
+          <div class="popup-form-group">
+            <label for="popup-name">Nom complet</label>
+            <input type="text" id="popup-name" name="name" placeholder="Jean Dupont" required>
+          </div>
+          
+          <div class="popup-form-group">
+            <label for="popup-email">Email professionnel</label>
+            <input type="email" id="popup-email" name="email" placeholder="jean@entreprise.com" required>
+          </div>
+          
+          <div class="popup-form-group">
+            <label for="popup-phone">Téléphone</label>
+            <input type="tel" id="popup-phone" name="phone" placeholder="+33 6 12 34 56 78" required>
+          </div>
+        </div>
+        
+        <input type="hidden" name="source" value="Popup 10 secondes">
+        
+        <button type="submit" class="popup-submit-btn">
+          <span class="btn-text">Être recontacté</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        
+        <p class="popup-privacy">🔒 Vos données sont sécurisées et ne seront jamais partagées</p>
+        
+        <div id="popup-status" style="display: none; margin-top: 15px; padding: 12px; border-radius: 8px; text-align: center; font-size: 14px;"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Styles pour la popup -->
+  <style>
+    .contact-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    .contact-popup.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .popup-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+    }
+    
+    .popup-content {
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 24px;
+      padding: 50px 45px;
+      max-width: 550px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.25),
+        0 0 1px rgba(0, 0, 0, 0.1);
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    
+    .contact-popup.active .popup-content {
+      transform: scale(1) translateY(0);
+    }
+    
+    .popup-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      color: #666666;
+    }
+    
+    .popup-close:hover {
+      background: rgba(0, 0, 0, 0.08);
+      transform: rotate(90deg) scale(1.05);
+      color: #000000;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .popup-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    
+    .popup-logo {
+      width: 300px;
+      height: auto;
+      margin: 0 auto 30px auto;
+      display: block;
+      filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.1));
+    }
+    
+    .popup-badge {
+      display: inline-block;
+      padding: 7px 18px;
+      background: #671324;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(103, 19, 36, 0.3);
+    }
+    
+    .popup-title {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #671324;
+      margin: 0 0 12px 0;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+    
+    .popup-subtitle {
+      font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+      color: #666666;
+      margin: 0;
+      line-height: 1.6;
+      max-width: 440px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+    
+    .popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .popup-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    
+    .popup-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .popup-form-group label {
+      font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #671324;
+      letter-spacing: 0.01em;
+    }
+    
+    .popup-form-group input {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      padding: 15px 18px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #000000;
+      transition: all 0.25s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+    
+    .popup-form-group input::placeholder {
+      color: #999999;
+    }
+    
+    .popup-form-group input:focus {
+      outline: none;
+      border-color: #DBA12D;
+      background: #ffffff;
+      box-shadow: 
+        0 0 0 4px rgba(219, 161, 45, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+      transform: translateY(-1px);
+    }
+    
+    .popup-submit-btn {
+      font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 17px 32px;
+      background: #DBA12D;
+      color: #ffffff;
+      border: 2px solid #DBA12D;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      letter-spacing: 0.02em;
+      margin-top: 8px;
+      box-shadow: 
+        0 4px 12px rgba(219, 161, 45, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .popup-submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .popup-submit-btn:hover::before {
+      left: 100%;
+    }
+    
+    .popup-submit-btn:hover {
+      transform: translateY(-2px);
+      background: #671324;
+      border-color: #671324;
+      box-shadow: 
+        0 8px 20px rgba(103, 19, 36, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .popup-submit-btn:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+    
+    .btn-icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .popup-submit-btn:hover .btn-icon {
+      transform: translateX(4px);
+    }
+    
+    .popup-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .popup-privacy {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #999999;
+      text-align: center;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    @media (max-width: 768px) {
+      .popup-content {
+        padding: 40px 25px;
+        max-width: 95%;
+        border-radius: 20px;
+      }
+      
+      .popup-title {
+        font-size: 26px;
+      }
+      
+      .popup-subtitle {
+        font-size: 14px;
+      }
+      
+      .popup-submit-btn {
+        padding: 16px 28px;
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <!-- Script pour gérer la popup -->
+  <script>
+    (function() {
+      'use strict';
+      
+      const POPUP_DELAY = 12000; // 12 secondes
+      const POPUP_SHOWN_KEY = 'eugenia_popup_shown_v3';
+      
+      // Vérifier si la popup a déjà été affichée dans cette session
+      const popupAlreadyShown = sessionStorage.getItem(POPUP_SHOWN_KEY);
+      
+      if (popupAlreadyShown) {
+        return;
+      }
+      
+      setTimeout(function() {
+        const popup = document.getElementById('contact-popup');
+        
+        if (!popup) {
+          return;
+        }
+        
+        const closeBtn = popup.querySelector('.popup-close');
+        const overlay = popup.querySelector('.popup-overlay');
+        const form = popup.querySelector('.popup-form');
+        const statusDiv = document.getElementById('popup-status');
+        const submitBtn = form ? form.querySelector('.popup-submit-btn') : null;
+        
+        if (!closeBtn || !overlay || !form || !statusDiv || !submitBtn) {
+          return;
+        }
+        
+        // Afficher la popup
+        popup.style.display = 'flex';
+        setTimeout(() => {
+          popup.classList.add('active');
+        }, 10);
+        
+        // Marquer comme affichée
+        sessionStorage.setItem(POPUP_SHOWN_KEY, 'true');
+        
+        // Fonction pour fermer la popup
+        function closePopup() {
+          popup.classList.remove('active');
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, 400);
+        }
+        
+        // Fermer au clic sur la croix
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          closePopup();
+        });
+        
+        // Fermer au clic sur l'overlay
+        overlay.addEventListener('click', function(e) {
+          closePopup();
+        });
+        
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && popup.classList.contains('active')) {
+            closePopup();
+          }
+        });
+        
+        // Gérer la soumission du formulaire
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          submitBtn.disabled = true;
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<span class="btn-text">Envoi en cours...</span>';
+          
+          const formData = new FormData(form);
+          
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              statusDiv.style.display = 'block';
+              statusDiv.style.background = '#2c3e50';
+              statusDiv.style.color = '#ffffff';
+              statusDiv.style.fontWeight = '600';
+              statusDiv.innerHTML = '✓ Merci ! Nous vous contacterons très bientôt.';
+              
+              form.reset();
+              
+              // Fermer la popup après 3 secondes
+              setTimeout(closePopup, 3000);
+            } else {
+              console.error('❌ Erreur serveur:', response.status);
+              statusDiv.style.display = 'block';
+              statusDiv.style.background = '#ff4444';
+              statusDiv.style.color = '#ffffff';
+              statusDiv.style.fontWeight = '600';
+              statusDiv.innerHTML = '✗ Erreur. Veuillez réessayer.';
+            }
+          } catch (error) {
+            console.error('❌ Erreur réseau:', error);
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#ff4444';
+            statusDiv.style.color = '#ffffff';
+            statusDiv.style.fontWeight = '600';
+            statusDiv.innerHTML = '✗ Erreur de connexion.';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        });
+      }, POPUP_DELAY);
+    })();
+  </script>
+
+  <!-- Script pour optimiser le chargement des vidéos -->
+  <script>
+    // S'assurer que le scroll est libre immédiatement
+    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
+    
+    // Charger les vidéos de service en lazy loading
+    document.addEventListener('DOMContentLoaded', function() {
+      // Charger les vidéos de service seulement quand elles deviennent visibles
+      const serviceVideos = document.querySelectorAll('.service-video');
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target.readyState === 0) {
+            entry.target.load();
+            entry.target.play().catch(() => {});
+            videoObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '100px' });
+      
+      serviceVideos.forEach(video => videoObserver.observe(video));
+    });
+  </script>
+</body>
+</html>

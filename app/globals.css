@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page-bg: #DADCE0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Styles pour le composant AboutUsSlide */
+.about-us-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-slide * {
+  box-sizing: border-box;
+}
+
+/* Optimisations de performance */
+.about-us-slide img {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Styles pour les cartes */
+.image-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+/* Masque de fade pour les bords */
+.fade-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+/* Styles pour InfiniteRibbon */
+.ribbon-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-us-slide {
+    touch-action: pan-x;
+  }
+  
+  .ribbon-container {
+    touch-action: pan-x;
+  }
+}
+
+/* Focus visible pour l'accessibilité */
+.image-card:focus-visible,
+.ribbon-card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Réduction des animations pour les utilisateurs qui préfèrent */
+@media (prefers-reduced-motion: reduce) {
+  .image-card,
+  .ribbon-card {
+    transition: none;
+  }
+  
+  .about-us-slide *,
+  .ribbon-container * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

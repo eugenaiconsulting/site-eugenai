@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - EugenIA Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+        }
+        
+        /* Section contact plein écran */
+        .contact-section-full {
+            width: 100%;
+            padding: 60px 20px;
+        }
+        
+        /* Formulaire plein écran */
+        .contact-form-full {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Titre principal du formulaire */
+        .form-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #671324;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+        
+        /* Form steps */
+        .form-step {
+            display: none;
+            width: 100%;
+        }
+        
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Options group plein écran */
+        .form-options-group-full {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .form-option-card-full {
+            display: block;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .form-option-card-full input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .form-option-card-full input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+            z-index: 10;
+            pointer-events: auto;
+        }
+        
+        .option-content-full {
+            padding: 35px 30px;
+            border: 3px solid #e0e0e0;
+            border-radius: 16px;
+            background: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            pointer-events: none;
+        }
+        
+        .form-option-card-full label {
+            cursor: pointer;
+        }
+        
+        .form-option-card-full:hover .option-content-full {
+            border-color: #671324;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(103, 19, 36, 0.2);
+        }
+        
+        .form-option-card-full input[type="radio"]:checked + .option-content-full,
+        .form-option-card-full input[type="checkbox"]:checked + .option-content-full {
+            border-color: #671324;
+            background: #671324;
+            color: white;
+            box-shadow: 0 8px 30px rgba(103, 19, 36, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .form-option-card-full input[type="radio"]:checked + .option-content-full .option-title-full,
+        .form-option-card-full input[type="checkbox"]:checked + .option-content-full .option-title-full {
+            color: white;
+        }
+        
+        .option-title-full {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        /* Champs de formulaire plein écran */
+        .form-fields-full {
+            width: 100%;
+        }
+        
+        .form-row-full {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .form-group-full {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        
+        .form-group-full label {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .form-group-full input,
+        .form-group-full textarea,
+        .form-select-full {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group-full input:focus,
+        .form-group-full textarea:focus,
+        .form-select-full:focus {
+            outline: none;
+            border-color: #671324;
+            box-shadow: 0 0 0 4px rgba(103, 19, 36, 0.1);
+        }
+        
+        .form-group-full textarea {
+            resize: vertical;
+            min-height: 180px;
+        }
+        
+        /* Navigation */
+        .form-navigation {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .form-btn-next,
+        .form-btn-submit {
+            padding: 18px 45px;
+            background: #671324;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .form-btn-next:hover,
+        .form-btn-submit:hover {
+            background: #DBA12D;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(103, 19, 36, 0.3);
+        }
+        
+        .form-btn-prev {
+            padding: 18px 45px;
+            background: #999;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .form-btn-prev:hover {
+            background: #777;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .form-main-title {
+                font-size: 2.5rem;
+                margin-bottom: 40px;
+            }
+            
+            .form-options-group-full {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .form-row-full {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .form-navigation {
+                flex-direction: column;
+            }
+            
+            .form-btn-next,
+            .form-btn-prev,
+            .form-btn-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none border-b border-transparent" style="height: 100px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-center items-center h-full">
+                <a href="index.html" class="flex items-center h-full">
+                    <img src="assets/logo rouge eugenia seul.png" alt="EugenIA Consulting" class="h-44 w-auto" style="margin-top: 70px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu hamburger -->
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                    <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                        <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                        <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                </div>
+            </nav>
+            
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Section Contact -->
+    <section class="contact-section-full" style="margin-top: 100px; min-height: calc(100vh - 100px);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <form class="contact-form-full" id="contactForm" action="https://formspree.io/f/xblzzrdr" method="POST">
+                
+                <!-- Étape 1 : Qui êtes-vous ? -->
+                <div class="form-step active" data-step="1">
+                    <h1 class="form-main-title">Qui êtes-vous ?</h1>
+                    <div class="form-options-group-full">
+                        <label class="form-option-card-full">
+                            <input type="radio" name="userType" value="particulier" required>
+                            <div class="option-content-full">
+                                <span class="option-title-full">Particulier</span>
+                            </div>
+                        </label>
+                        <label class="form-option-card-full">
+                            <input type="radio" name="userType" value="startup" required>
+                            <div class="option-content-full">
+                                <span class="option-title-full">Startup</span>
+                            </div>
+                        </label>
+                        <label class="form-option-card-full">
+                            <input type="radio" name="userType" value="entreprise" required>
+                            <div class="option-content-full">
+                                <span class="option-title-full">Entreprise</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="form-btn-next" onclick="nextStep()">Suivant</button>
+                    </div>
+                </div>
+                
+                <!-- Étape 2 : En quoi êtes-vous intéressé ? -->
+                <div class="form-step" data-step="2">
+                    <h1 class="form-main-title">En quoi êtes-vous intéressé ?</h1>
+                    <p class="text-center text-gray-600 mb-8" style="font-size: 1.1rem;">Vous pouvez sélectionner plusieurs options</p>
+                    <div class="form-options-group-full">
+                        <label class="form-option-card-full" for="interest-automatisation">
+                            <input type="checkbox" name="interest[]" value="automatisation" id="interest-automatisation">
+                            <div class="option-content-full">
+                                <span class="option-title-full">Automatisation & Agents IA</span>
+                            </div>
+                        </label>
+                        <label class="form-option-card-full" for="interest-formules">
+                            <input type="checkbox" name="interest[]" value="formules" id="interest-formules">
+                            <div class="option-content-full">
+                                <span class="option-title-full">Nos Formules</span>
+                            </div>
+                        </label>
+                        <label class="form-option-card-full" for="interest-autre">
+                            <input type="checkbox" name="interest[]" value="autre" id="interest-autre">
+                            <div class="option-content-full">
+                                <span class="option-title-full">Autre</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="form-btn-prev" onclick="previousStep()">Précédent</button>
+                        <button type="button" class="form-btn-next" onclick="nextStep()">Suivant</button>
+                    </div>
+                </div>
+                
+                <!-- Étape 3 : Informations de contact -->
+                <div class="form-step" data-step="3">
+                    <h1 class="form-main-title">Vos informations de contact</h1>
+                    <div class="form-fields-full">
+                        <div class="form-row-full">
+                            <div class="form-group-full">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" name="name" required placeholder="Jean Dupont">
+                            </div>
+                            <div class="form-group-full">
+                                <label for="email">Email professionnel *</label>
+                                <input type="email" id="email" name="email" required placeholder="jean@entreprise.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row-full">
+                            <div class="form-group-full">
+                                <label for="company">Entreprise / Organisation</label>
+                                <input type="text" id="company" name="company" placeholder="Nom de votre entreprise">
+                            </div>
+                            <div class="form-group-full">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="form-btn-prev" onclick="previousStep()">Précédent</button>
+                        <button type="button" class="form-btn-next" onclick="nextStep()">Suivant</button>
+                    </div>
+                </div>
+                
+                <!-- Étape 4 : Détails du projet -->
+                <div class="form-step" data-step="4">
+                    <h1 class="form-main-title">Décrivez votre projet</h1>
+                    <div class="form-fields-full">
+                        <div class="form-group-full">
+                            <label for="subject">Sujet de votre demande *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Ex: Besoin d'automatisation pour mon entreprise">
+                        </div>
+                        
+                        <div class="form-group-full">
+                            <label for="message">Décrivez votre projet en détail *</label>
+                            <textarea id="message" name="message" rows="8" required placeholder="Parlez-nous de vos besoins, de vos objectifs, de vos contraintes..."></textarea>
+                        </div>
+                        
+                        <div class="form-group-full">
+                            <label for="timeline">Quand souhaitez-vous démarrer ?</label>
+                            <select id="timeline" name="timeline" class="form-select-full">
+                                <option value="">Sélectionnez une période</option>
+                                <option value="immediat">Immédiatement</option>
+                                <option value="1mois">Dans 1 mois</option>
+                                <option value="3mois">Dans 3 mois</option>
+                                <option value="6mois">Dans 6 mois</option>
+                                <option value="plus">Plus tard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="form-btn-prev" onclick="previousStep()">Précédent</button>
+                        <button type="submit" class="form-btn-submit">Envoyer la demande</button>
+                    </div>
+                    <div id="form-status" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;"></div>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-16 px-4 sm:px-6 lg:px-8" style="background-color: #671324;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 ml-8">
+                <div>
+                    <img src="assets/1709c118-461c-4d3c-b2db-475e6a8c9484.png" alt="EugenIA Consulting" class="h-12 w-auto mb-4">
+                    <p class="text-white/80">
+                        Experts en automatisation et agents IA pour transformer votre entreprise.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="service-automatisation.html" class="text-white/80 hover:text-white transition-colors">Automatisation & Agents IA</a></li>
+                        <li><a href="nos-formules.html" class="text-white/80 hover:text-white transition-colors">Nos Formules</a></li>
+                        <li><a href="service-formation.html" class="text-white/80 hover:text-white transition-colors">Formation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">À Propos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="notre-histoire.html" class="text-white/80 hover:text-white transition-colors">Notre Histoire</a></li>
+                        <li><a href="valeurs-et-vision.html" class="text-white/80 hover:text-white transition-colors">Valeurs & Vision</a></li>
+                        <li><a href="equipe.html" class="text-white/80 hover:text-white transition-colors">Équipe</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Nous Contacter</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    © 2024 EugenIA Consulting. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Pré-remplir le champ sujet si présent dans l'URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subject = urlParams.get('subject');
+            if (subject) {
+                const subjectInput = document.getElementById('subject');
+                if (subjectInput) {
+                    subjectInput.value = decodeURIComponent(subject);
+                }
+            }
+        });
+
+        // Le menu est géré par script.js - pas besoin de script inline supplémentaire
+
+        // Script pour copier l'email
+        function copyEmail(event, email) {
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            
+            try {
+                document.execCommand('copy');
+                const notification = document.createElement('div');
+                notification.textContent = '✓ Email copié : ' + email;
+                notification.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #671324; color: white; padding: 15px 25px; border-radius: 8px; font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; box-shadow: 0 4px 15px rgba(103, 19, 36, 0.4); z-index: 99999; animation: slideIn 0.3s ease;';
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            } catch (err) {
+                console.error('Erreur:', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Gestion des étapes du formulaire
+        let currentStep = 1;
+        const totalSteps = 4;
+        
+        function nextStep() {
+            // Vérifier que l'étape actuelle est valide
+            const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+            const radioChecked = currentStepElement.querySelector('input[type="radio"]:checked');
+            const requiredInputs = currentStepElement.querySelectorAll('input[required], textarea[required], select[required]');
+            let isValid = true;
+            
+            // Vérifier les champs requis pour l'étape 3 et 4
+            if (currentStep === 3 || currentStep === 4) {
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = '#ff4444';
+                    } else {
+                        input.style.borderColor = '#e0e0e0';
+                    }
+                });
+            }
+            
+            // Pour l'étape 1 avec radio buttons (une seule sélection)
+            if (currentStep === 1 && !radioChecked) {
+                alert('Veuillez sélectionner une option avant de continuer');
+                return;
+            }
+            
+            // Pour l'étape 2 avec checkboxes (sélection multiple)
+            if (currentStep === 2) {
+                const checkboxes = currentStepElement.querySelectorAll('input[type="checkbox"]');
+                const checkedBoxes = currentStepElement.querySelectorAll('input[type="checkbox"]:checked');
+                if (checkedBoxes.length === 0) {
+                    alert('Veuillez sélectionner au moins une option avant de continuer');
+                    return;
+                }
+            }
+            
+            if (!isValid) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            if (currentStep < totalSteps) {
+                currentStepElement.classList.remove('active');
+                currentStep++;
+                const nextStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+                if (nextStepElement) {
+                    nextStepElement.classList.add('active');
+                    // Scroll vers le haut pour voir la nouvelle question
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+        
+        function previousStep() {
+            if (currentStep > 1) {
+                const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+                currentStepElement.classList.remove('active');
+                currentStep--;
+                const prevStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+                if (prevStepElement) {
+                    prevStepElement.classList.add('active');
+                    // Scroll vers le haut
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+        
+        // Script pour gérer le formulaire Formspree
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const statusDiv = document.getElementById('form-status');
+            
+            if (!form || !statusDiv) return;
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Envoi en cours...';
+                    submitBtn.style.opacity = '0.7';
+                }
+                
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch('https://formspree.io/f/xblzzrdr', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.background = 'linear-gradient(135deg, #671324 0%, #DBA12D 100%)';
+                        statusDiv.style.color = '#ffffff';
+                        statusDiv.innerHTML = '✓ Message envoyé avec succès ! Nous vous répondrons très bientôt.';
+                        form.reset();
+                        // Réinitialiser à l'étape 1
+                        document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+                        currentStep = 1;
+                        const firstStep = document.querySelector('.form-step[data-step="1"]');
+                        if (firstStep) {
+                            firstStep.classList.add('active');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                        
+                        setTimeout(() => {
+                            statusDiv.style.opacity = '0';
+                            setTimeout(() => {
+                                statusDiv.style.display = 'none';
+                                statusDiv.style.opacity = '1';
+                            }, 300);
+                        }, 5000);
+                    } else {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.background = '#ff4444';
+                        statusDiv.style.color = '#ffffff';
+                        statusDiv.innerHTML = '✗ Une erreur est survenue. Veuillez réessayer.';
+                    }
+                } catch (error) {
+                    statusDiv.style.display = 'block';
+                    statusDiv.style.background = '#ff4444';
+                    statusDiv.style.color = '#ffffff';
+                    statusDiv.innerHTML = '✗ Erreur de connexion. Vérifiez votre connexion internet.';
+                } finally {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Envoyer la demande';
+                        submitBtn.style.opacity = '1';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

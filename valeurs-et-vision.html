@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Valeurs et Ambition - EugenIA Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+        
+        /* Styles pour le hero visuel amélioré */
+        .hero-visual-section {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 50%, #ffffff 100%);
+        }
+        
+        .hero-gradient-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(103, 19, 36, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(219, 161, 45, 0.03) 0%, transparent 50%);
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+        
+        .animated-shape {
+            animation: floatShape 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatShape {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+            33% {
+                transform: translateY(-30px) rotate(5deg);
+                opacity: 0.6;
+            }
+            66% {
+                transform: translateY(20px) rotate(-5deg);
+                opacity: 0.4;
+            }
+        }
+        
+        .hero-decorative-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #DBA12D, transparent);
+            height: 2px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero-line-1 {
+            top: 20%;
+            left: 0;
+            width: 30%;
+            transform: rotate(-5deg);
+            animation: lineMove 12s ease-in-out infinite;
+        }
+        
+        .hero-line-2 {
+            bottom: 30%;
+            right: 0;
+            width: 25%;
+            transform: rotate(8deg);
+            animation: lineMove 15s ease-in-out infinite reverse;
+        }
+        
+        .hero-line-3 {
+            top: 50%;
+            left: 50%;
+            width: 20%;
+            transform: translateX(-50%) rotate(3deg);
+            animation: lineMove 18s ease-in-out infinite;
+        }
+        
+        @keyframes lineMove {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translateX(20px) translateY(-10px);
+                opacity: 0.4;
+            }
+        }
+        
+        .hero-content {
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title-word-1 {
+            display: inline-block;
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+        
+        .title-ampersand {
+            display: inline-block;
+            color: #DBA12D;
+            margin: 0 0.2em;
+            animation: scaleIn 0.8s ease-out 0.8s both;
+        }
+        
+        .title-word-2 {
+            display: inline-block;
+            animation: slideInRight 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .hero-divider {
+            animation: expandWidth 1.2s ease-out 1s both;
+            transform-origin: center;
+        }
+        
+        @keyframes expandWidth {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 8rem;
+                opacity: 1;
+            }
+        }
+        
+        .hero-subtitle {
+            animation: fadeIn 1s ease-out 1.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Formes géométriques décoratives */
+        .geometric-shape {
+            position: absolute;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .shape-circle {
+            border-radius: 50%;
+            background-color: #671324;
+        }
+        
+        .shape-diamond {
+            transform: rotate(45deg);
+            background-color: #DBA12D;
+        }
+        
+        .shape-hexagon {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            background-color: #671324;
+        }
+        
+        .shape-pentagon {
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            background-color: #671324;
+        }
+        
+        /* Section valeurs avec design alterné vertical */
+        .values-timeline {
+            position: relative;
+        }
+        
+        .value-item {
+            position: relative;
+            margin-bottom: 120px;
+            display: flex;
+            align-items: center;
+            min-height: 400px;
+        }
+        
+        .value-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .value-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .value-content {
+            flex: 1;
+            padding: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .value-visual {
+            flex: 1;
+            position: relative;
+            height: 400px;
+            min-height: 400px;
+        }
+        
+        /* Cartes hexagonales pour les valeurs */
+        .hexagon-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            background-color: #671324;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .value-item:nth-child(2) .hexagon-card {
+            background-color: #DBA12D;
+        }
+        
+        .hexagon-card::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            background: white;
+            z-index: 1;
+        }
+        
+        .hexagon-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .hexagon-card img {
+            position: absolute;
+            inset: 12px;
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
+            object-fit: cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            opacity: 0.8;
+            z-index: 1;
+        }
+        
+        .value-item:hover .hexagon-card {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Section ambition avec design circulaire */
+        .ambition-circle {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: #671324;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 80px rgba(103, 19, 36, 0.3);
+            overflow: hidden;
+        }
+        
+        .ambition-inner {
+            width: 82%;
+            height: 82%;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px;
+            position: relative;
+        }
+        
+        .ambition-circle img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        /* Vision cards avec effet de vague */
+        .vision-wave-card {
+            position: relative;
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .vision-wave-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #671324;
+        }
+        
+        .vision-wave-card:nth-child(2)::before {
+            background-color: #DBA12D;
+        }
+        
+        .vision-wave-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(103, 19, 36, 0.3);
+        }
+        
+        /* Responsive - Les styles sont dans styles.css */
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-transparent backdrop-blur-none border-b border-transparent" style="height: 100px; z-index: 100;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-center items-center h-full">
+                <a href="index.html" class="flex items-center h-full">
+                    <img src="assets/logo rouge eugenia seul.png" alt="EugenIA Consulting" class="h-44 w-auto" style="margin-top: 70px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu hamburger -->
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <!-- Header du menu -->
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                    <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                        <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                        <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                </div>
+            </nav>
+            
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Hero Section avec formes géométriques -->
+    <section class="relative px-4 sm:px-6 lg:px-8 overflow-hidden hero-visual-section" style="margin-top: 100px; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 80px;">
+        <!-- Arrière-plan avec effet de gradient animé -->
+        <div class="hero-gradient-bg"></div>
+        
+        <!-- Formes géométriques en arrière-plan -->
+        <div class="geometric-shape shape-circle" style="width: 300px; height: 300px; top: 10%; left: 5%;"></div>
+        <div class="geometric-shape shape-diamond" style="width: 200px; height: 200px; top: 60%; right: 10%;"></div>
+        <div class="geometric-shape shape-pentagon" style="width: 250px; height: 250px; top: 12%; right: 8%;"></div>
+        
+        <!-- Lignes décoratives -->
+        <div class="hero-decorative-line hero-line-1"></div>
+        <div class="hero-decorative-line hero-line-2"></div>
+        <div class="hero-decorative-line hero-line-3"></div>
+        
+        <div class="relative max-w-6xl mx-auto text-center hero-content" style="z-index: 1;">
+            <div class="hero-title-wrapper">
+                <h1 class="text-7xl md:text-8xl lg:text-9xl font-bold font-playfair mb-8 hero-title" style="color: #671324;">
+                    <span class="title-word-1">Valeurs</span><span class="title-ampersand">&</span><br><span class="title-word-2">Ambition</span>
+                </h1>
+            </div>
+            <div class="w-32 h-1 bg-[#DBA12D] mx-auto mb-12 hero-divider"></div>
+            <p class="text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light hero-subtitle">
+                Ce qui nous anime, ce vers quoi nous aspirons
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Valeurs avec Timeline Verticale et Formes Hexagonales -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 relative" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 values-header" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 font-playfair mb-6">
+                    Nos Valeurs
+                </h2>
+                <div class="w-32 h-1 bg-[#671324] mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Trois piliers fondamentaux qui façonnent notre identité et guident chacune de nos actions
+                </p>
+            </div>
+
+            <!-- Timeline des valeurs -->
+            <div class="values-timeline">
+                <!-- Valeur 1: Collaboration -->
+                <div class="value-item">
+                    <div class="value-content">
+                        <div class="mb-6">
+                            <span class="inline-block text-6xl font-bold text-[#671324] font-playfair mb-4">01</span>
+                            <h3 class="text-4xl font-bold text-gray-900 font-playfair mb-6">Collaboration</h3>
+                        </div>
+                        <p class="text-xl text-gray-700 leading-relaxed font-light">
+                            Nous travaillons main dans la main avec nos clients pour comprendre leurs défis et créer des solutions personnalisées qui répondent parfaitement à leurs besoins. Chaque projet est une aventure partagée où votre vision rencontre notre expertise.
+                        </p>
+                    </div>
+                    <div class="value-visual">
+                        <div class="hexagon-card">
+                            <img src="assets/IMG_3979.jpg" alt="Collaboration">
+                            <div class="hexagon-content">
+                                <div class="text-5xl font-bold text-[#671324] font-playfair">C</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valeur 2: Innovation -->
+                <div class="value-item">
+                    <div class="value-visual">
+                        <div class="hexagon-card">
+                            <img src="assets/PXL_20250602_073144343.PORTRAIT.ORIGINAL.jpg" alt="Innovation">
+                            <div class="hexagon-content">
+                                <div class="text-5xl font-bold text-[#DBA12D] font-playfair">I</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-content">
+                        <div class="mb-6">
+                            <span class="inline-block text-6xl font-bold text-[#DBA12D] font-playfair mb-4">02</span>
+                            <h3 class="text-4xl font-bold text-gray-900 font-playfair mb-6">Innovation</h3>
+                        </div>
+                        <p class="text-xl text-gray-700 leading-relaxed font-light">
+                            Nous explorons les dernières technologies et méthodes pour vous proposer des solutions modernes et efficaces qui font la différence. L'innovation est notre moteur pour anticiper les besoins de demain et vous offrir toujours plus.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Valeur 3: Transparence -->
+                <div class="value-item">
+                    <div class="value-content">
+                        <div class="mb-6">
+                            <span class="inline-block text-6xl font-bold text-[#671324] font-playfair mb-4">03</span>
+                            <h3 class="text-4xl font-bold text-gray-900 font-playfair mb-6">Transparence</h3>
+                        </div>
+                        <p class="text-xl text-gray-700 leading-relaxed font-light">
+                            Communication claire et processus transparents. Nos clients sont informés à chaque étape et savent exactement où en est leur projet. La confiance naît de la transparence, et nous cultivons cette confiance au quotidien.
+                        </p>
+                    </div>
+                    <div class="value-visual">
+                        <div class="hexagon-card">
+                            <img src="assets/PXL_20250603_092828316.jpg" alt="Transparence">
+                        <div class="hexagon-content">
+                            <div class="text-5xl font-bold text-[#671324] font-playfair">T</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Ambition -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-playfair mb-6">
+                    Notre Ambition
+                </h2>
+                <div class="w-24 h-1 bg-[#671324] mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Texte -->
+                <div class="space-y-6">
+                    <p class="text-xl text-gray-700 leading-relaxed font-light">
+                        Chez EugenIA Consulting, notre ambition est de <strong>transformer la façon dont les entreprises perçoivent et utilisent l'intelligence artificielle</strong>. Nous croyons que chaque organisation, quelle que soit sa taille, mérite d'avoir accès à des solutions d'automatisation intelligentes et performantes.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed font-light">
+                        Notre objectif est de <strong>démocratiser l'IA</strong> en rendant ces technologies accessibles, compréhensibles et profitables pour tous. Nous voulons être le partenaire de confiance qui accompagne votre entreprise dans sa transformation digitale, en alliant expertise technique et vision stratégique.
+                    </p>
+
+                    <p class="text-xl text-gray-700 leading-relaxed font-light">
+                        Nous aspirons à créer un <strong>écosystème où l'innovation rencontre l'efficacité</strong>, où chaque automatisation libère du temps pour que vous puissiez vous concentrer sur ce qui compte vraiment : développer votre entreprise et créer de la valeur.
+                    </p>
+                </div>
+
+                <!-- Image -->
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-2xl transform rotate-2 translate-x-2 translate-y-2" style="background-color: #671324;"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="assets/B2.png" alt="Notre Ambition" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Vision avec Cards à Effet de Vague -->
+    <section class="py-32 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 font-playfair mb-6">
+                    Notre Vision
+                </h2>
+                <div class="w-24 h-1 bg-[#671324] mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Comment nous envisageons l'avenir de l'automatisation et de l'intelligence artificielle
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Vision 1 -->
+                <div class="vision-wave-card">
+                    <div class="mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #671324;">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-4">Automatisation Fluide</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed font-light">
+                        Nous imaginons un futur où l'automatisation est intuitive et transparente. Chaque processus s'optimise de lui-même, chaque système apprend de ses interactions. La technologie devient invisible, seule l'efficacité reste visible.
+                    </p>
+                </div>
+
+                <!-- Vision 2 -->
+                <div class="vision-wave-card">
+                    <div class="mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #DBA12D;">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-4">Humain Augmenté</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed font-light">
+                        La technologie ne remplace pas l'humain, elle l'améliore. Nous voyons un monde où chaque personne peut se concentrer sur ce qui la passionne, tandis que l'IA gère les tâches répétitives. L'humain créatif, l'IA opérationnelle.
+                    </p>
+                </div>
+
+                <!-- Vision 3 -->
+                <div class="vision-wave-card">
+                    <div class="mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #671324;">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-4">Innovation Permanente</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed font-light">
+                        L'innovation n'est pas un événement, c'est un état d'esprit constant. Nous restons à l'avant-garde, anticipons les tendances, intégrons les dernières avancées. Notre vision : être toujours un pas devant, pour vous offrir toujours plus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Engagement avec Design Asymétrique -->
+    <section class="py-32 px-4 sm:px-6 lg:px-8 relative" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Partie gauche avec texte -->
+                <div>
+                    <h2 class="text-5xl font-bold text-gray-900 font-playfair mb-8">
+                        Notre Engagement
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="pl-6 border-l-4" style="border-left-color: #671324;">
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-3">Excellence Opérationnelle</h3>
+                            <p class="text-gray-700 leading-relaxed font-light">
+                                Nous nous engageons à fournir des solutions qui dépassent vos attentes, avec un suivi rigoureux et une qualité constante. Chaque projet est une promesse d'excellence que nous tenons.
+                            </p>
+                        </div>
+                        
+                        <div class="pl-6 border-l-4" style="border-left-color: #DBA12D;">
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-3">Accompagnement Personnalisé</h3>
+                            <p class="text-gray-700 leading-relaxed font-light">
+                                Votre entreprise est unique, votre accompagnement aussi. Nous adaptons notre approche à vos spécificités, votre culture et vos objectifs. Un partenariat sur-mesure pour des résultats sur-mesure.
+                            </p>
+                        </div>
+                        
+                        <div class="pl-6 border-l-4" style="border-left-color: #671324;">
+                            <h3 class="text-2xl font-bold text-gray-900 font-playfair mb-3">Impact Mesurable</h3>
+                            <p class="text-gray-700 leading-relaxed font-light">
+                                Nos solutions génèrent des résultats concrets et quantifiables. Gain de temps, réduction des coûts, amélioration de la productivité : nous mesurons notre succès à travers le vôtre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partie droite avec image asymétrique -->
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-3xl transform rotate-3 translate-x-4 translate-y-4" style="background: linear-gradient(135deg, #671324 0%, #DBA12D 100%); opacity: 0.2;"></div>
+                    <div class="absolute inset-0 rounded-3xl transform -rotate-2 -translate-x-2 -translate-y-2" style="background: linear-gradient(135deg, #DBA12D 0%, #671324 100%); opacity: 0.15;"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="assets/amphi pitch.jpeg" alt="Notre Engagement" class="w-full h-[500px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #671324;">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white font-playfair mb-6">
+                    Partagez Notre Vision
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Rejoignez les entreprises qui ont choisi EugenIA Consulting pour leur transformation digitale
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="nos-formules.html" style="background-color: white; color: #671324; border: 2px solid transparent; font-weight: bold; padding: 16px 32px; border-radius: 9999px; transition: all 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.background='transparent'; this.style.color='white'; this.style.border='2px solid white'" onmouseout="this.style.background='white'; this.style.color='#671324'; this.style.border='2px solid transparent'">
+                        Découvrir Nos Formules
+                    </a>
+                    <a href="contact.html" style="background-color: transparent; color: white; border: 2px solid white; font-weight: bold; padding: 16px 32px; border-radius: 9999px; transition: all 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.background='white'; this.style.color='#671324'" onmouseout="this.style.background='transparent'; this.style.color='white'">
+                        Nous Contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-16 px-4 sm:px-6 lg:px-8" style="background-color: #671324;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="assets/1709c118-461c-4d3c-b2db-475e6a8c9484.png" alt="EugenIA Consulting" class="h-12 w-auto mb-4">
+                    <p class="text-white/80">
+                        Experts en automatisation et agents IA pour transformer votre entreprise.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="service-automatisation.html" class="text-white/80 hover:text-white transition-colors">Automatisation & Agents IA</a></li>
+                        <li><a href="nos-formules.html" class="text-white/80 hover:text-white transition-colors">Nos Formules</a></li>
+                        <li><a href="service-formation.html" class="text-white/80 hover:text-white transition-colors">Formation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">À Propos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="notre-histoire.html" class="text-white/80 hover:text-white transition-colors">Notre Histoire</a></li>
+                        <li><a href="valeurs-et-vision.html" class="text-white/80 hover:text-white transition-colors">Valeurs & Vision</a></li>
+                        <li><a href="equipe.html" class="text-white/80 hover:text-white transition-colors">Équipe</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Nous Contacter</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    © 2024 EugenIA Consulting. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Animation des valeurs au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation du header de la section valeurs
+            const valuesHeader = document.querySelector('.values-header');
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            if (valuesHeader) {
+                headerObserver.observe(valuesHeader);
+            }
+
+            // Animation des items de valeurs
+            const valueItems = document.querySelectorAll('.value-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            valueItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équipe & Communauté - EugenIA Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+        
+        /* Layout avec photo à gauche et texte à droite */
+        .team-member-section {
+            margin-bottom: 120px;
+        }
+        
+        .team-photo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .team-photo-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.5s ease;
+            display: block;
+        }
+        
+        .team-member-section:hover .team-photo-container img {
+            transform: scale(1.02);
+        }
+        
+        /* Section alternée */
+        .team-member-section:nth-child(even) .grid {
+            flex-direction: row-reverse;
+        }
+        
+        /* Numéro du membre */
+        .member-number {
+            font-size: 180px;
+            font-weight: 900;
+            color: #671324;
+            opacity: 0.1;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        
+        /* Section texte */
+        .team-text-container {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none border-b border-transparent" style="height: 100px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-center items-center h-full">
+                <a href="index.html" class="flex items-center h-full">
+                    <img src="assets/logo rouge eugenia seul.png" alt="EugenIA Consulting" class="h-44 w-auto" style="margin-top: 70px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu hamburger -->
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                    <div class="submenu" id="about-submenu">
+                        <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                        <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                        <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                    </div>
+                </div>
+                
+                <div class="nav-category">
+                    <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                </div>
+            </nav>
+            
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Section Jennie -->
+    <section class="team-member-section py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-0">
+                <div class="team-photo-container relative bg-white">
+                    <img src="assets/jennie 2.png" alt="Jennie">
+                </div>
+                <div class="bg-white p-12 md:p-16 team-text-container relative">
+                    <h2 class="text-5xl md:text-6xl font-bold text-gray-900 font-playfair mb-6">
+                        JENNIE
+                    </h2>
+                    <div class="text-sm font-bold tracking-widest text-[#671324] mb-8">
+                        FONDATRICE & CEO
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Visionnaire et passionnée, Jennie dirige EugenIA avec un objectif clair : démocratiser l'automatisation pour toutes les entreprises. Forte de son expérience en consulting et de sa vision stratégique, elle transforme chaque défi en opportunité et guide notre équipe vers l'excellence.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Sa conviction ? L'IA et l'automatisation ne doivent pas être réservées aux grandes entreprises. Avec EugenIA, elle rend ces technologies accessibles, compréhensibles et profitables pour tous.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center justify-center w-fit bg-[#671324] text-white px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300" style="letter-spacing: 0.15em;" onmouseover="this.style.backgroundColor='#DBA12D'" onmouseout="this.style.backgroundColor='#671324'">
+                        Nous Contacter
+                        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nicolas -->
+    <section class="team-member-section py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #fff7ec 0%, #ffffff 100%);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-0">
+                <div class="bg-white p-12 md:p-16 team-text-container relative order-2 md:order-1">
+                    <h2 class="text-5xl md:text-6xl font-bold text-gray-900 font-playfair mb-6">
+                        NICOLAS
+                    </h2>
+                    <div class="text-sm font-bold tracking-widest text-[#DBA12D] mb-8">
+                        CTO & EXPERT AUTOMATISATION
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Expert en Make et agents IA, Nicolas transforme les processus complexes en solutions automatisées élégantes. Curieux et toujours en veille technologique, il explore les dernières innovations pour proposer à nos clients des solutions à la pointe de l'excellence.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Son expertise technique et sa capacité à simplifier l'complexe en font un atout précieux pour EugenIA. Il crée des automatisations robustes qui génèrent un impact mesurable sur la productivité de nos clients.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center justify-center w-fit bg-[#DBA12D] text-gray-900 px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300" style="letter-spacing: 0.15em;" onmouseover="this.style.backgroundColor='#671324'; this.style.color='white'" onmouseout="this.style.backgroundColor='#DBA12D'; this.style.color='#333'">
+                        Nous Contacter
+                        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="team-photo-container relative order-1 md:order-2 bg-white">
+                    <img src="assets/ChatGPT Image 28 oct. 2025, 16_59_09.png" alt="Nicolas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Samuel -->
+    <section class="team-member-section py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-0">
+                <div class="team-photo-container relative bg-white">
+                    <img src="assets/Samuel 2.png" alt="Samuel">
+                </div>
+                <div class="bg-white p-12 md:p-16 team-text-container relative">
+                    <h2 class="text-5xl md:text-6xl font-bold text-gray-900 font-playfair mb-6">
+                        SAMUEL
+                    </h2>
+                    <div class="text-sm font-bold tracking-widest text-[#671324] mb-8">
+                        LEAD DEVELOPER
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Développeur passionné d'innovation, Samuel crée les outils et solutions techniques qui font la différence. Son approche méthodique et sa rigueur garantissent des développements de qualité, durables et performants. Il transforme les concepts en réalité technique.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Polyvalent et créatif, Samuel maîtrise plusieurs technologies et sait choisir les bonnes solutions selon les besoins de chaque projet. Il met son expertise au service de l'innovation EugenIA.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center justify-center w-fit bg-[#671324] text-white px-8 py-3 font-bold uppercase tracking-widest transition-all duration-300" style="letter-spacing: 0.15em;" onmouseover="this.style.backgroundColor='#DBA12D'" onmouseout="this.style.backgroundColor='#671324'">
+                        Nous Contacter
+                        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="cta-section py-20 px-4 sm:px-6 lg:px-8" style="background-color: #671324;">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white font-playfair mb-6">
+                    Partagez Notre Vision
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Rejoignez les entreprises qui ont choisi EugenIA Consulting pour leur transformation digitale
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="nos-formules.html" style="background-color: white; color: #671324; border: 2px solid transparent; font-weight: bold; padding: 16px 32px; border-radius: 9999px; transition: all 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.background='transparent'; this.style.color='white'; this.style.border='2px solid white'" onmouseout="this.style.background='white'; this.style.color='#671324'; this.style.border='2px solid transparent'">
+                        Découvrir Nos Formules
+                    </a>
+                    <a href="contact.html" style="background-color: transparent; color: white; border: 2px solid white; font-weight: bold; padding: 16px 32px; border-radius: 9999px; transition: all 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.background='white'; this.style.color='#671324'" onmouseout="this.style.background='transparent'; this.style.color='white'">
+                        Nous Contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-16 px-4 sm:px-6 lg:px-8" style="background-color: #671324;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="assets/1709c118-461c-4d3c-b2db-475e6a8c9484.png" alt="EugenIA Consulting" class="h-12 w-auto mb-4">
+                    <p class="text-white/80">
+                        Experts en automatisation et agents IA pour transformer votre entreprise.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="service-automatisation.html" class="text-white/80 hover:text-white transition-colors">Automatisation & Agents IA</a></li>
+                        <li><a href="nos-formules.html" class="text-white/80 hover:text-white transition-colors">Nos Formules</a></li>
+                        <li><a href="service-formation.html" class="text-white/80 hover:text-white transition-colors">Formation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">À Propos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="notre-histoire.html" class="text-white/80 hover:text-white transition-colors">Notre Histoire</a></li>
+                        <li><a href="valeurs-et-vision.html" class="text-white/80 hover:text-white transition-colors">Valeurs & Vision</a></li>
+                        <li><a href="equipe.html" class="text-white/80 hover:text-white transition-colors">Équipe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Nous Contacter</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    © 2024 EugenIA Consulting. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

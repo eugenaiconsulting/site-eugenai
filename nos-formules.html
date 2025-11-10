@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Formules - EugenIA Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9999999999">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ec 100%);
+        }
+        
+        /* Appliquer la police Playfair à tous les titres */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif !important;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        .badge-make {
+            background: linear-gradient(135deg, #671324 0%, #4b0f1b 100%);
+        }
+        .badge-dust {
+            background: linear-gradient(135deg, #DBA12D 0%, #B8941F 100%);
+            color: #2b2b2b;
+        }
+        .badge-both {
+            background: linear-gradient(135deg, #671324 0%, #DBA12D 100%);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #671324 0%, #4b0f1b 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(103, 19, 36, 0.3);
+        }
+        .btn-secondary {
+            border: 2px solid #DBA12D;
+            color: #DBA12D;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #DBA12D;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(219, 161, 45, 0.3);
+        }
+                .check-icon {
+                    background: linear-gradient(135deg, #DBA12D 0%, #B8941F 100%);
+                }
+
+                /* Force la visibilité du bouton menu */
+                .menu-btn {
+                    position: fixed !important;
+                    top: 25px !important;
+                    left: 12px !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 10px !important;
+                    padding: 10px 14px !important;
+                    background: transparent !important;
+                    color: #000000 !important;
+                    border: none !important;
+                    border-radius: 10px !important;
+                    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !important;
+                    font-size: 14px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.1em !important;
+                    text-transform: uppercase !important;
+                    cursor: pointer !important;
+                    user-select: none !important;
+                    z-index: 9999 !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+
+                .menu-icon {
+                    display: inline-flex !important;
+                    flex-direction: column !important;
+                    justify-content: center !important;
+                    gap: 6px !important;
+                }
+
+                .menu-icon span {
+                    width: 20px !important;
+                    height: 2px !important;
+                    background: #000000 !important;
+                    border-radius: 2px !important;
+                }
+
+                /* Menu latéral et backdrop au-dessus de tout */
+                .side-panel {
+                    z-index: 99999 !important;
+                }
+
+                .backdrop {
+                    z-index: 99998 !important;
+                }
+
+
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent pointer-events-none" style="height: 100px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-center items-center h-full">
+                <!-- Logo rouge centré et agrandi -->
+                <a href="index.html" class="flex items-center h-full pointer-events-auto">
+                    <img src="assets/logo rouge eugenia seul.png" alt="EugenIA Consulting" style="height: 180px; width: auto; margin-top: 65px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu hamburger -->
+    <button class="menu-btn" aria-label="Ouvrir le menu">
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+        </span>
+        <span class="label">Menu</span>
+    </button>
+    
+    <div class="backdrop" aria-hidden="true"></div>
+    
+    <aside class="side-panel" aria-hidden="true">
+        <div class="panel-content">
+            <!-- Header du menu -->
+            <div class="menu-header">
+                <button class="panel-close" aria-label="Fermer le menu"><span class="x" aria-hidden="true"></span></button>
+            </div>
+            
+            <!-- Navigation principale -->
+            <nav class="main-nav">
+                <div class="nav-category">
+                    <a href="index.html#services" class="nav-item main-category" data-category="services">SERVICES</a>
+                    <div class="submenu" id="services-submenu">
+                        <a href="service-automatisation.html" class="submenu-item">Automatisation & Agents IA</a>
+                        <a href="nos-formules.html" class="submenu-item">Nos Formules</a>
+                    </div>
+                </div>
+                
+                        <div class="nav-category">
+                            <a href="#" class="nav-item main-category" data-category="about">À PROPOS</a>
+                            <div class="submenu" id="about-submenu">
+                                <a href="notre-histoire.html" class="submenu-item">Notre histoire</a>
+                                <a href="valeurs-et-vision.html" class="submenu-item">Valeurs & Vision</a>
+                                <a href="equipe.html" class="submenu-item">Équipe & Communauté</a>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-category">
+                            <a href="contact.html" class="nav-item main-category" data-category="contact">CONTACT</a>
+                        </div>
+            </nav>
+            
+            <!-- Footer du menu -->
+            <div class="menu-footer">
+                <a href="contact.html" class="footer-link">CONTACT</a>
+                <a href="equipe.html" class="footer-link">COMMUNAUTÉ</a>
+                <a href="nos-formules.html" class="footer-link">FORMULES</a>
+                <a href="contact.html" class="footer-link">SUPPORT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="relative py-64 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background Video -->
+        <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted playsinline loop>
+            <source src="assets/formation et accompagnement.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-playfair drop-shadow-lg" style="margin-top: 3rem;">
+                Nos Formules : Automatisation Make & Agents IA Dust
+            </h1>
+                    <p class="text-xl sm:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow-md text-white" style="margin-top: 55rem;">
+                        Accélérez vos opérations avec des scénarios Make robustes et un agent IA Dust intégré. 
+                        Sans formation, 100% exécution.
+                    </p>
+        </div>
+    </section>
+
+    <!-- Tech Banner -->
+    <section class="py-8 bg-gradient-to-r from-[#671324] to-[#4b0f1b]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium">
+                <span class="text-[#DBA12D] font-bold">Automatisation Make</span>
+                <span class="mx-3">•</span>
+                <span class="text-[#DBA12D] font-bold">Agent IA Dust</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-32 px-4 sm:px-6 lg:px-8 relative" style="margin-top: 6rem;">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#fff7ec] to-transparent opacity-50"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Section title -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#671324] mb-4 font-playfair">Nos Formules</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choisissez la formule qui correspond à vos besoins d'automatisation</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Starter Card -->
+                <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-black/5 p-6 card-hover group">
+                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold badge-make text-white">
+                        Make
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-2xl font-bold text-[#671324] mb-2 font-playfair">Starter</h3>
+                        <p class="text-gray-600 mb-6 font-medium">Première automatisation</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Analyse rapide</strong> de votre besoin</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>1 scénario Make</strong> (2-3 outils connectés)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Tests complets</strong> et mise en production</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Support technique</strong> 7 jours post-livraison</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Documentation</strong> d'utilisation</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cas d'usage -->
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Idéal pour :</h4>
+                            <p class="text-sm text-gray-600">Automatiser un processus simple (envoi d'emails, synchronisation de données, notifications)</p>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Automation Pro Card -->
+                <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-black/5 p-6 card-hover group">
+                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold badge-make text-white">
+                        Make
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-2xl font-bold text-[#671324] mb-2 font-playfair">Automation Pro</h3>
+                        <p class="text-gray-600 mb-6 font-medium">Multi-process</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Audit complet</strong> de vos workflows</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>3 à 5 automatisations</strong> Make interconnectées</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Support prioritaire</strong> 2 semaines</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Optimisation avancée</strong> (déclencheurs, conditions)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Tableau de suivi</strong> Notion intégré</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cas d'usage -->
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Idéal pour :</h4>
+                            <p class="text-sm text-gray-600">Automatiser plusieurs processus métier (CRM, comptabilité, marketing, RH)</p>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Agent IA Card -->
+                <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-black/5 p-6 card-hover group">
+                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold badge-dust">
+                        Dust
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-2xl font-bold text-[#671324] mb-2 font-playfair">Agent IA</h3>
+                        <p class="text-gray-600 mb-6 font-medium">Copilote Dust</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Conception complète</strong> d'un agent Dust intelligent</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Connexion multi-sources</strong> (Sheets, Notion, CRM, Drive)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Logique métier</strong> et prompts personnalisés</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Tests en environnement</strong> réel et ajustements</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Formation équipe</strong> à l'utilisation</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cas d'usage -->
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Idéal pour :</h4>
+                            <p class="text-sm text-gray-600">Assistant IA personnalisé pour analyser vos données et automatiser vos tâches cognitives</p>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Full IA Card -->
+                <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-black/5 p-6 card-hover group">
+                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold badge-both text-white">
+                        Make + Dust
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-2xl font-bold text-[#671324] mb-2 font-playfair">Full IA</h3>
+                        <p class="text-gray-600 mb-6 font-medium">Automatisation + Agent intégré</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Agent Dust intelligent</strong> relié à vos scénarios Make</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Automatisation complète</strong> d'un processus métier</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Monitoring 24/7</strong> et support prioritaire 1 mois</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Dashboard centralisé</strong> temps réel</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 rounded-full check-icon mr-3 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 text-sm"><strong>Formation complète</strong> équipe et documentation</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cas d'usage -->
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Idéal pour :</h4>
+                            <p class="text-sm text-gray-600">Transformation digitale complète d'un processus métier (onboarding, reporting, suivi client)</p>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton de contact unique -->
+            <div class="text-center mt-16">
+                <h3 class="text-3xl font-bold text-[#671324] mb-4 font-playfair">Intéressé par une de nos formules ?</h3>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé</p>
+                <button onclick="handleEmailClick('Demande de devis - EugenIA Consulting')" class="px-12 py-5 bg-[#DBA12D] text-white rounded-2xl font-semibold text-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    Nous contacter
+                </button>
+            </div>
+
+            <!-- Included Banner -->
+            <div class="mt-12 bg-gradient-to-r from-[#671324] to-[#4b0f1b] rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-white mb-4 font-playfair">Chaque formule comprend</h3>
+                <p class="text-white/90 text-lg max-w-4xl mx-auto">
+                    Un consultant dédié, réunion de cadrage initiale, suivi hebdomadaire pendant la mise en place.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-[#671324] text-center mb-12 font-playfair">
+                Questions fréquentes
+            </h2>
+            <div class="space-y-6">
+                <div class="faq-item bg-white/80 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:bg-white/90 hover:shadow-lg transform hover:-translate-y-1" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-[#671324] mb-3">
+                            Peut-on commencer petit puis évoluer ?
+                        </h3>
+                        <span class="faq-icon text-[#671324] text-2xl transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Absolument !</strong> Notre approche modulaire vous permet de commencer petit et d'évoluer progressivement. 
+                            Vous pouvez démarrer par la formule <strong>Starter</strong> pour automatiser un premier processus, puis passer à 
+                            <strong>Automation Pro</strong> pour connecter plusieurs workflows, et enfin opter pour <strong>Full IA</strong> 
+                            pour une transformation digitale complète. Nous conservons vos automatisations existantes et les intégrons 
+                            naturellement dans les nouvelles formules.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/80 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:bg-white/90 hover:shadow-lg transform hover:-translate-y-1" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-[#671324] mb-3">
+                            Quels outils sont compatibles ?
+                        </h3>
+                        <span class="faq-icon text-[#671324] text-2xl transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Plus de 5000 applications compatibles !</strong> Nous connectons vos outils principaux : 
+                            <strong>Google Workspace</strong> (Gmail, Sheets, Drive, Calendar), <strong>Slack</strong>, <strong>Notion</strong>, 
+                            <strong>HubSpot/Salesforce</strong>, <strong>Zapier</strong>, <strong>Microsoft 365</strong>, <strong>WhatsApp Business</strong>, 
+                            <strong>Stripe/PayPal</strong>, <strong>Mailchimp</strong>, <strong>Airtable</strong>, et bien d'autres. 
+                            Notre agent IA Dust peut également analyser vos <strong>fichiers PDF</strong>, <strong>documents Word</strong>, 
+                            et <strong>données CSV</strong>. Si votre outil n'est pas listé, nous pouvons créer une intégration personnalisée.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/80 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:bg-white/90 hover:shadow-lg transform hover:-translate-y-1" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-[#671324] mb-3">
+                            Proposez-vous la maintenance ?
+                        </h3>
+                        <span class="faq-icon text-[#671324] text-2xl transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Oui, nous proposons plusieurs niveaux de maintenance !</strong> Notre <strong>forfait Monitoring Premium</strong> 
+                            inclut : surveillance 24/7 de vos automatisations, alertes en cas de dysfonctionnement, mises à jour automatiques, 
+                            optimisation des performances, et support prioritaire par email/téléphone. Nous proposons également des 
+                            <strong>audits trimestriels</strong> pour identifier de nouvelles opportunités d'automatisation et des 
+                            <strong>formations continues</strong> pour votre équipe. Tarifs à partir de 199€/mois selon le nombre d'automatisations.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/80 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:bg-white/90 hover:shadow-lg transform hover:-translate-y-1" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-[#671324] mb-3">
+                            Combien de temps pour être en production ?
+                        </h3>
+                        <span class="faq-icon text-[#671324] text-2xl transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Délais optimisés selon la complexité :</strong><br>
+                            • <strong>Starter</strong> : 3-5 jours (automatisation simple, tests inclus)<br>
+                            • <strong>Automation Pro</strong> : 2-3 semaines (audit + intégrations multiples)<br>
+                            • <strong>Agent IA</strong> : 2-3 semaines (configuration + formation équipe)<br>
+                            • <strong>Full IA</strong> : 4-6 semaines (transformation complète)<br><br>
+                            <strong>Processus accéléré :</strong> Nous commençons par un audit gratuit de vos processus existants, 
+                            puis nous développons en mode agile avec des livrables hebdomadaires. Vous pouvez tester et valider 
+                            chaque étape avant la mise en production finale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8" style="background-color: #E33054;">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 font-playfair">
+                Prêts à automatiser ?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Décrivez votre besoin en 2 minutes — on vous répond sous 24h ouvrées.
+            </p>
+            
+            <div class="flex justify-center items-center">
+                <button onclick="handleEmailClick('Nous écrire – EugenIA Consulting')" class="px-8 py-4 bg-white text-[#E33054] rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
+                    Nous écrire
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 sm:px-6 lg:px-8" style="background-color: #E33054;">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-white">
+                © 2025 EugenIA Consulting — Automatisation Make & Agents IA Dust
+            </p>
+        </div>
+    </footer>
+
+        <script>
+            function handleEmailClick(subject) {
+                // Rediriger vers la page contact avec le sujet pré-rempli
+                window.location.href = `contact.html?subject=${encodeURIComponent(subject)}`;
+            }
+
+            function toggleFAQ(element) {
+                const answer = element.querySelector('.faq-answer');
+                const icon = element.querySelector('.faq-icon');
+                const isOpen = !answer.classList.contains('hidden');
+                
+                if (isOpen) {
+                    // Fermer
+                    answer.classList.add('hidden');
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    // Ouvrir
+                    answer.classList.remove('hidden');
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+
+            // Animation d'apparition des FAQ au scroll
+            document.addEventListener('DOMContentLoaded', function() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        }
+                    });
+                });
+
+                faqItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(item);
+                });
+            });
+        </script>
+        
+        <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
